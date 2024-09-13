@@ -1,0 +1,37 @@
+Algoritmo "Verificar Aprovação por Presença"
+var
+   nome: caractere
+   faltas, total_aprovados, total_reprovados, total_alunos: inteiro
+   presenca: real
+   continuar: caractere
+Inicio
+   // Inicializando as variáveis
+   total_aprovados <- 0
+   total_reprovados <- 0
+   total_alunos <- 0
+   repetir
+      // Entrada de dados
+      Escreva("Digite o nome do aluno: ")
+      Leia(nome)
+      Escreva("Digite o número de faltas do(a) ", nome, ": ")
+      Leia(faltas)
+      
+      // Calculando a porcentagem de presença
+      presenca <- ((120 - faltas) / 120) * 100
+      
+      // Verificando se o aluno foi aprovado ou reprovado
+      se presenca >= 75 entao
+         EscrevaL(nome, " aprovado(a) por presença.")
+         total_aprovados <- total_aprovados + 1
+      senao
+         EscrevaL(nome, " reprovado(a) por faltas.")
+         total_reprovados <- total_reprovados + 1
+      fimse
+      
+      total_alunos <- total_alunos + 1
+      
+      // Pergunta se deseja continuar
+      Escreva("Deseja continuar? (sim/não): ")
+      Leia(continuar)
+   ate continuar = "não"
+   
